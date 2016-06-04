@@ -10,11 +10,37 @@ import UIKit
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var webview: UIWebView!
+	
+
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		loaded()
+		
+		
+		
+		
 	}
+ 
+	func loaded(){
+		let path:String = "https://www.youtube.com/"
+		let requestURL = NSURL(string: path)
+		let request = NSURLRequest(URL:requestURL!)
+		webview.loadRequest(request)
+		
+	}
+	func webViewdidSatartLoad(_ : UIWebView){
+		//loading.startAnimating()
 
+		
+		
+	}
+	func webViewDidfinishload(_ :UIWebView){
+	//	loading.stopAnimating()
+	
+	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
